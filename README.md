@@ -11,7 +11,10 @@ In this tutorial, I have configured the **Azure DevOps Managed DevOps Pool** wit
 - **Agent State**: Fresh agent for every job  
 - **Standby Agents Mode**: Off (agents are provisioned on-demand when jobs are queued)  
 - **Parallel Jobs Capacity**: 5 (enabled)  
-- **Running Builds**: 5  
+- **Running Builds**: 5
+
+  ![scaling](https://github.com/user-attachments/assets/5d5356d9-55bc-4690-a95f-ffaffb128968)
+
 
 With this setup, each build runs on a newly provisioned agent, ensuring a clean environment for execution. The use of **5 parallel self-hosted agents** allows all builds to queue simultaneously , as long as the number of concurrent builds does not exceed the available capacity.  
 
