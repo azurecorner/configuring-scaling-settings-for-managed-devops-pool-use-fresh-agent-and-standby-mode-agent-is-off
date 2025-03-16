@@ -1,0 +1,35 @@
+parameters:
+  - name: BUILD_AGENT
+
+jobs:
+- job: Build
+  pool:
+    vmImage: ${{ parameters.BUILD_AGENT }}  # Dynamically set OS
+
+  steps:
+  - task: NodeTool@0
+    displayName: 'Use Node.js 22'
+    inputs:
+      versionSpec: '22.x'  # Use latest available Node.js 22 version
+
+
+  - script: node -v
+    displayName: 'Check Node.js Version'
+
+
+  - script: npm install
+    displayName: 'Install Dependencies'
+    workingDirectory: '$(Build.SourcesDirectory)/web-app'
+
+  - task: Npm@1
+    displayName: npm install
+    inputs:
+      command: 'install'
+      workingDir: '$(Build.SourcesDirectory)/web-app'
+      
+  - task: Npm@1
+    displayName: npm build
+    inputs:
+      command: 'custom'
+      customCommand: 'run build'
+      workingDir: '$(Build.SourcesDirectory)/web-app'

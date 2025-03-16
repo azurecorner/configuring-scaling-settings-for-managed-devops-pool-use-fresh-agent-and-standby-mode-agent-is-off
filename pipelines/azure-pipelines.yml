@@ -1,0 +1,17 @@
+trigger:
+- none  # Adjust if needed
+
+stages:
+- stage: BuildOnUbuntu
+  displayName: 'Build on Ubuntu'
+  jobs:
+  - template: templates/node-template.yml
+    parameters:
+      BUILD_AGENT: 'ubuntu-latest'
+
+- stage: BuildOnWindows
+  displayName: 'Build on Windows'
+  jobs:
+  - template: templates/node-template.yml
+    parameters:
+      BUILD_AGENT: 'windows-latest'
