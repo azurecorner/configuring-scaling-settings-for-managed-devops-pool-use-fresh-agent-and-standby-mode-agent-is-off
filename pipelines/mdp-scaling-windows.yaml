@@ -5,8 +5,7 @@ pool:
   name: datasynchro-pool-ado
   demands:
   - ImageOverride -equals windows-2022
-  #name: datasynchro-pool-ado
-  #vmImage: windows-latest
+
  
 
 steps:

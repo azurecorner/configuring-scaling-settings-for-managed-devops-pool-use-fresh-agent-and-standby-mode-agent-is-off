@@ -5,8 +5,7 @@ pool:
   name: datasynchro-pool-ado
   demands:
   - ImageOverride -equals ubuntu-22.04
-  #vmImage: windows-latest
-  #vmImage: ubuntu-latest
+
 
 steps:
 - script: echo Hello, world!

@@ -135,9 +135,7 @@ $logResponse.value | ForEach-Object {
 $result['queueTime']=$queueTime
 $result['startTime']=$startTime
 $result['finishTime']=$finishTime
-<# $result['durationInSeconds']=$durationInSeconds
-$result['delayInSeconds']=$delayInSeconds #>
-# Convert the extracted information to JSON
+
 
 $jsonResult = $result | ConvertTo-Json -Depth 10
 Write-Output $jsonResult
